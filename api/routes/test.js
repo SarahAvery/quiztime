@@ -5,13 +5,28 @@ const uuidv4 = require("uuid").v4;
 
 const answerConfig = {
   "test-one": {
-    q1: "q1-4",
+    q1: "q1-1",
     q2: "q2-2",
-    q3: "q3-3"
+    q3: "q3-4",
+    q4: "q4-3",
+    q5: "q5-4",
+    q6: "q6-1",
+    q7: "q7-4",
+    q8: "q8-3",
+    q9: "q9-1",
+    q10: "q10-3"
   },
   "test-two": {
     q1: "q1-3",
-    q2: "q2-2"
+    q2: "q2-1",
+    q3: "q3-4",
+    q4: "q4-2",
+    q5: "q5-4",
+    q6: "q6-4",
+    q7: "q7-3",
+    q8: "q8-1",
+    q9: "q9-4",
+    q10: "q10-2"
   }
 };
 
@@ -24,7 +39,7 @@ const evaluate = (data) => {
       isCorrect: answerId === answerConfig[testId][questionId]
     };
     return acc;
-  }, formData);
+  }, {});
   const correctAnswers = Object.values(qaMap).filter((value) => value.isCorrect);
   const totalAnswerLength = Object.keys(answerConfig[testId]).length;
   const percent = (correctAnswers.length / totalAnswerLength) * 100;
