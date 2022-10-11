@@ -3,6 +3,7 @@ import styled from "styled-components";
 const QuestionStyled = styled.div`
   width: 100%;
   display: flex;
+  align-items: center;
 
   .instructions {
     text-transform: uppercase;

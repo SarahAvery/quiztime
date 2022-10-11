@@ -34,15 +34,23 @@ const Question = ({
     <QuestionStyled>
       <div className="question">
         <div className="question-title">{title}</div>
-        <div className="question-content">
-          <p>{content}</p>
-        </div>
+        {content && (
+          <div className="question-content">
+            <p>{content}</p>
+          </div>
+        )}
       </div>
       <div className="answer-container">
         <div className="instructions">select only one</div>
         <fieldset onChange={updateSelected}>
           {answers.map(({ id, value }) => (
-            <InputRadio key={id} name={questionId} id={id} value={value} checked={selected === id} />
+            <InputRadio
+              key={id}
+              name={questionId}
+              id={id}
+              value={value}
+              checked={selected === id}
+            />
           ))}
         </fieldset>
       </div>
