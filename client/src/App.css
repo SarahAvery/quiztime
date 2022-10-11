@@ -164,7 +164,12 @@ select {
 
 /* Application */
 
-
+:root {
+  --greenBlue: #378B8C;
+  --green: #659999;
+  --lightGreen: #cdd9c6;
+  --blue: #252D42;
+}
 
 .wrapper {
   max-width: 1400px;
@@ -209,6 +214,7 @@ body {
   height: 100%;
   font-weight: 500;
   font-family: "Raleway", sans-serif;
+  background: var(--green);
 }
 
 main {
