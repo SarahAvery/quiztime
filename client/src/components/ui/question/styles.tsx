@@ -3,9 +3,15 @@ import styled from "styled-components";
 const QuestionStyled = styled.div`
   width: 100%;
   display: flex;
+  align-items: center;
+  padding: 20px 0;
 
   .instructions {
     text-transform: uppercase;
+  }
+
+  .question-title {
+    font-weight: bold;
   }
 
   .question-title,
@@ -30,7 +36,7 @@ const QuestionStyled = styled.div`
 
       &::before {
         content: "";
-        border-left: 4px solid lightgrey;
+        border-left: 4px solid #d3d3d3;
         margin-right: 10px;
       }
     }

@@ -4,6 +4,7 @@ import Question from "../../ui/question/Question";
 import { TestType } from "./types";
 import { testConfig } from "./config";
 import FormStyled from "./styles";
+import Steps from "../../ui/steps/Steps";
 
 const TestContainer = () => {
   const { testId } = useParams();
@@ -19,13 +20,17 @@ const TestContainer = () => {
 
   const navigate = useNavigate();
 
+  const nextDisabled = formData[currentQuestion.id] ? false : true;
+  const numberOfQuestions = currentTestConfig?.questions.length;
+  const testName = currentTestConfig?.name;
+  // Need step counter
   const onSubmit: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault();
 
     fetch("http://localhost:3001/test", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ testId, formData }),
+      body: JSON.stringify({ testId, testName, formData }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -54,25 +59,34 @@ const TestContainer = () => {
   return (
     <FormStyled>
       <div className="test-title">
-        <p>{currentTestConfig.id}</p>
+        <p>Test: {currentTestConfig.name}</p>
       </div>
-      <form>
-        <Question
-          key={currentQuestion.id}
-          {...currentQuestion}
-          testId={currentTestConfig.id}
-          onChange={onChange as any}
-          defaultSelected={formData[currentQuestion.id]}
-        />
+      <div className="centered">
+        <form>
+          <Question
+            key={currentQuestion.id}
+            {...currentQuestion}
+            testId={currentTestConfig.id}
+            onChange={onChange as any}
+            defaultSelected={formData[currentQuestion.id]}
+          />
 
-        <div className="button-container">
-          {currentQuestionIndex >= 1 && <button onClick={onBack}>Back</button>}
-          {currentQuestionIndex < currentTestConfig?.questions.length - 1 && <button onClick={onNext}>Next</button>}
-          {currentQuestionIndex === currentTestConfig?.questions.length - 1 && (
-            <button onClick={onSubmit}>Submit</button>
-          )}
-        </div>
-      </form>
+          <div className="button-container">
+            {currentQuestionIndex < currentTestConfig?.questions.length - 1 && (
+              <button onClick={onNext} disabled={nextDisabled}>
+                Next
+              </button>
+            )}
+            {currentQuestionIndex === currentTestConfig?.questions.length - 1 && (
+              <button onClick={onSubmit} disabled={nextDisabled}>
+                Submit
+              </button>
+            )}
+            {currentQuestionIndex >= 1 && <button onClick={onBack}>Back</button>}
+          </div>
+        </form>
+        <Steps total={numberOfQuestions} currIndex={currentQuestionIndex + 1} />
+      </div>
     </FormStyled>
   );
 };

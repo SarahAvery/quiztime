@@ -1,39 +1,50 @@
 import HomeStyled from "./styles";
 import { Link } from "react-router-dom";
+import { testConfig } from "../testContainer/config";
+import Nav from "../../ui/nav/Nav";
 
 const Home = () => {
   return (
-    <div className="wrapper">
-      <HomeStyled>
-        <div>Welcome....</div>
-        <div>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi, totam numquam modi ullam id tempora
-          molestias, iusto quibusdam quas nulla, doloremque et ut. Adipisci sequi quos consectetur officia minima
-          deserunt! Molestiae, voluptatum delectus, blanditiis labore, quidem veniam suscipit temporibus adipisci nihil
-          quis quae. Voluptatibus architecto esse corporis enim. Officiis tenetur corrupti error, odit mollitia hic
-          deserunt nulla officia laborum esse!
+    <HomeStyled>
+      <Nav />
+      <main className="wrapper">
+        <div className="title">
+          <h1>Think you know your facts? Put it to the test!</h1>
         </div>
-        <div className="test-button-container">
-          <div id="test-one">
-            <Link to="/test/test-one" className="test-button">
-              Test One
-            </Link>
+        <div className="container">
+          <div className="paragraph">
+            <h2>Get Started:</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quidem
+              aliquam consectetur explicabo sed odio eaque amet recusandae rem
+              tenetur earum, laudantium, deserunt cupiditate dicta ea aspernatur
+              deleniti dolores excepturi.
+            </p>
           </div>
-          <div id="test-two">
-            <Link to="/test/test-two" className="test-button">
-              Test Two
-            </Link>
+          <div className="test-button-container">
+            <p>Click a quiz to get started!</p>
+            <ul>
+              {testConfig.map((test) => (
+                <li key={test.id} id={test.id}>
+                  <Link to={`/test/${test.id}`} className="test-button">
+                    {test.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="paragraph">
+            <h2>Results:</h2>
+            <p>
+              Nemo corrupti sint nam ad perspiciatis voluptatem aliquid magni
+              omnis ut architecto, blanditiis quos. Mollitia repellendus quo
+              natus placeat ipsum blanditiis saepe itaque inventore, quod,
+              voluptas quidem accusantium vitae facilis!
+            </p>
           </div>
         </div>
-        <div>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi, totam numquam modi ullam id tempora
-          molestias, iusto quibusdam quas nulla, doloremque et ut. Adipisci sequi quos consectetur officia minima
-          deserunt! Molestiae, voluptatum delectus, blanditiis labore, quidem veniam suscipit temporibus adipisci nihil
-          quis quae. Voluptatibus architecto esse corporis enim. Officiis tenetur corrupti error, odit mollitia hic
-          deserunt nulla officia laborum esse!
-        </div>
-      </HomeStyled>
-    </div>
+      </main>
+    </HomeStyled>
   );
 };
 

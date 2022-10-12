@@ -20,8 +20,17 @@ const InputRadio = ({
   checked: boolean;
 }) => (
   <InputContainerStyled className={checked ? "checked" : ""}>
-    <input type="radio" name={name} id={id} value={value} checked={checked} readOnly />
-    <label htmlFor={id}>{value}</label>
+    <label htmlFor={id} className="radio">
+      <input
+        type="radio"
+        name={name}
+        id={id}
+        value={value}
+        checked={checked}
+        readOnly
+      />
+      <span>{value}</span>
+    </label>
   </InputContainerStyled>
 );
 
