@@ -41,7 +41,6 @@ const Question = ({
         )}
       </div>
       <div className="answer-container">
-        <div className="instructions">select only one</div>
         <fieldset onChange={updateSelected}>
           {answers.map(({ id, value }) => (
             <InputRadio

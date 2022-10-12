@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { flexCenter } from "../../mixins";
 
 const StepsStyled = styled.div`
   width: 100%;
@@ -10,7 +11,7 @@ const StepsStyled = styled.div`
   .line {
     width: 100%;
     height: 2px;
-    background-color: white;
+    background-color: #ffffff;
   }
 
   .circles {
@@ -25,20 +26,18 @@ const StepsStyled = styled.div`
     width: 35px;
     height: 35px;
     border-radius: 35px;
-    border: 2px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border: 2px solid #ffffff;
+    ${flexCenter};
     z-index: 1;
-    box-shadow: 1px 1px 4px 0px var(--blue);
-    color: white;
-    background-color: var(--green);
+    box-shadow: var(--box-shadow-thin) var(--blue);
+    color: #ffffff;
+    background-color: var(--blue);
   }
 
   .circle.current {
-    border: 2px solid black;
-    color: black;
-    background-color: white;
+    border: 2px solid #000000;
+    color: #000000;
+    background-color: #ffffff;
   }
 `;
 

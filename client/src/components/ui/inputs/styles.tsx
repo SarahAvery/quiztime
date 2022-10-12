@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 const InputContainerStyled = styled.div`
-  border: 1px solid lightgrey;
-  border-radius: 4px;
+  border: 1px solid #d3d3d3;
+  border-radius: 6px;
   margin-bottom: 10px;
-  border-radius: 4px;
+  border-radius: 6px;
 
   &.checked {
-    background: var(--greenBlue);
+    background: #406788cc;
 
     label {
-      color: white;
+      /* color: #000000; */
+      color: #ffffff;
     }
   }
 
@@ -19,8 +20,8 @@ const InputContainerStyled = styled.div`
     cursor: pointer;
     user-select: none;
     text-align: left;
-    box-shadow: 1px 1px 4px 0px var(--blue);
-    border-radius: 4px;
+    box-shadow: var(--box-shadow-thin) #1e304380;
+    border-radius: 6px;
 
     & + .radio {
       margin-top: 12px;
@@ -41,15 +42,15 @@ const InputContainerStyled = styled.div`
           margin-right: 5px;
           width: 16px;
           height: 16px;
-          border: 1px solid grey;
-          background: white;
+          border: 1px solid #808080;
+          background: #ffffff;
         }
         &:after {
           content: "";
           display: block;
           width: 8px;
           height: 8px;
-          background: white;
+          background: #ffffff;
           position: absolute;
           border-radius: 50%;
           top: 5px;
@@ -60,11 +61,10 @@ const InputContainerStyled = styled.div`
       }
       &:checked + span:after {
         opacity: 1;
-        /* transform: scale(1, 1); */
       }
       &:checked + span:before {
-        border: 1px solid white;
-        background: var(--greenBlue);
+        border: 1px solid #ffffff;
+        background: #406788cc;
       }
     }
   }

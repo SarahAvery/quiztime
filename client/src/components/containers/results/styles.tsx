@@ -1,49 +1,67 @@
 import styled from "styled-components";
+import { flexCenter } from "../../mixins";
 
 const ResultsStyled = styled.div`
-  background-color: white;
-  background-color: var(--green);
-  margin: 40px 0;
   min-height: calc(100vh - 80px);
 
+  main.wrapper {
+    min-height: 0;
+    margin-bottom: 30px;
+  }
+
   .container {
-    margin: 20px 40px;
-    border: 1px solid lightgray;
-    font-size: 18px;
-    background: white;
-    border-radius: 4px;
-    box-shadow: 1px 1px 4px 0px var(--blue);
+    color: #000000;
+  }
+
+  .results {
+    display: flex;
+    margin: 0 10px;
+    justify-content: space-evenly;
+    box-shadow: var(--box-shadow-blurry) #f8fcff4c;
+    background: #fff;
+    border-radius: 6px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .review-container {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .title {
+    width: 100%;
+    margin: 30px 0;
   }
 
   h2 {
     text-align: center;
     margin: 20px 0;
+    letter-spacing: 0.7px;
+    font-size: 30px;
+    color: #ffffff;
   }
 
   .score {
+    width: 100%;
     font-size: 40px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* padding: 20px 0; */
+    ${flexCenter};
+    margin: 30px;
 
     p {
       padding: 30px;
-      border: 1px solid black;
+      border: 1px solid #d3d3d3;
+      border-radius: 6px;
+      box-shadow: var(--box-shadow-blurry) #d3d3d3;
     }
-  }
-
-  .results {
-    display: flex;
-    padding: 20px 0;
-    justify-content: space-evenly;
   }
 
   .row {
     display: flex;
-    padding: 10px;
+    padding: 20px 10px;
     p {
+      font-size: 18px;
     }
   }
   .row p:first-child {

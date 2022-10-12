@@ -1,14 +1,14 @@
 import styled from "styled-components";
+import { flexCenterWrap } from "../../mixins";
 
 const FormStyled = styled.div`
   min-height: calc(100vh);
-  /* background: #f4f4f4; */
-  background-color: var(--greenBlue);
-  color: black;
+  color: #000000;
 
   .test-title {
-    background-color: white;
+    background-color: #ffffff;
     height: 70px;
+    font-size: 30px;
 
     p {
       width: 100%;
@@ -22,26 +22,23 @@ const FormStyled = styled.div`
   .centered {
     margin: 40px 10%;
     min-height: calc(100vh - 70px - 80px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    ${flexCenterWrap};
   }
+
   form {
-    /* min-height: 60vh; */
     width: 100%;
-    background-color: white;
-    border-radius: 4px;
+    background-color: #ffffff;
+    border-radius: 6px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: column;
-    box-shadow: 2px 2px 6px 0px #4e4e4e;
+    box-shadow: var(--box-shadow-blurry) var(--secondary-blue);
   }
 
   .button-container {
     width: 100%;
-    border-top: 1px solid lightgrey;
+    border-top: 1px solid #d3d3d3;
     text-align: right;
     padding: 10px 30px;
     display: flex;
@@ -51,26 +48,28 @@ const FormStyled = styled.div`
   }
 
   button {
-    padding: 8px 16px;
-    background: var(--blue);
-    color: white;
+    padding: 8px 25px;
+    background: var(--primary-color);
+    color: #ffffff;
     outline: none;
     box-shadow: none;
     overflow: visible;
     border-width: 0;
-    border-radius: 4px;
-    border: 1px solid grey;
+    border-radius: 6px;
+    border: 1px solid #808080;
     font-weight: bold;
     transition: all 0.2s ease-in-out;
+    box-shadow: var(--box-shadow-thin) var(--secondary-blue);
 
     &:hover {
-      background: #374c80;
+      background: var(--secondary-blue);
     }
   }
 
   button:disabled {
-    background-color: grey;
+    background-color: #afafaf;
     opacity: 0.8;
+    box-shadow: var(--box-shadow-thin) #808080;
   }
 
   .wrapper {

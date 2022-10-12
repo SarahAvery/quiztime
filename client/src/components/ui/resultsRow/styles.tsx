@@ -1,23 +1,23 @@
 import styled from "styled-components";
+import { flexCenter } from "../../mixins";
 
 const ResultsItemRowStyled = styled.li`
   list-style: none;
-  border: 1px solid grey;
   margin: 10px;
-  border-radius: 4px;
-  box-shadow: 1px 1px 4px 0px var(--blue);
+  border-radius: 6px;
+  border: 1px solid grey;
+  /* box-shadow: var(--box-shadow-thin) white; */
   display: block;
   width: calc(50% - 20px);
+  background: white;
 
   .status {
     width: 100%;
     text-align: center;
     padding: 15px;
     font-weight: bold;
-    display: flex;
     position: relative;
-    justify-content: center;
-    align-items: center;
+    ${flexCenter};
   }
 
   .mark {
@@ -26,8 +26,12 @@ const ResultsItemRowStyled = styled.li`
     padding-right: 20px;
   }
 
-  svg {
+  svg.xmark {
     width: 10px;
+  }
+
+  svg.checkmark {
+    width: 14px;
   }
 
   .xmark {
@@ -35,7 +39,7 @@ const ResultsItemRowStyled = styled.li`
   }
 
   .checkmark {
-    fill: green;
+    fill: #008000;
   }
 
   .question,
@@ -56,11 +60,10 @@ const ResultsItemRowStyled = styled.li`
   }
 
   .input-container {
-    border: 1px solid lightgrey;
-    border-radius: 4px;
+    border: 1px solid #d3d3d3;
+    border-radius: 6px;
     margin-bottom: 10px;
-    border-radius: 4px;
-    box-shadow: 1px 1px 4px 0px #000000;
+    box-shadow: var(--box-shadow-thin) #808080;
 
     &:last-child {
       margin-bottom: 0px;
@@ -71,8 +74,8 @@ const ResultsItemRowStyled = styled.li`
       margin: 5px;
       width: 16px;
       height: 16px;
-      border: 1px solid grey;
-      background: white;
+      border: 1px solid #808080;
+      background: #ffffff;
       position: relative;
       flex-shrink: 0;
 
@@ -86,15 +89,15 @@ const ResultsItemRowStyled = styled.li`
         margin-right: 5px;
         width: 16px;
         height: 16px;
-        border: 1px solid grey;
-        background: white;
+        border: 1px solid #808080;
+        background: #ffffff;
       }
       &:after {
         content: "";
         display: block;
         width: 8px;
         height: 8px;
-        background: white;
+        background: #ffffff;
         position: absolute;
         border-radius: 50%;
         top: 3px;
@@ -109,7 +112,7 @@ const ResultsItemRowStyled = styled.li`
       border: 1px solid green;
 
       span.circle:before {
-        border: 1px solid white;
+        border: 1px solid #ffffff;
         background: var(--greenBlue);
       }
 
@@ -119,12 +122,9 @@ const ResultsItemRowStyled = styled.li`
     }
 
     &.incorrect {
-      /* background-color: #ff000040; */
-      /* border: 1px solid red; */
-
       span.circle:before {
-        border: 1px solid white;
-        background: red;
+        border: 1px solid #ffffff;
+        background: #ff0000;
       }
 
       span.circle:after {

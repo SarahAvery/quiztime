@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Nav from "../../ui/nav/Nav";
 import ResultsTable from "../../ui/resultsTable/ResultsTable";
 import ResultsStyled from "./styles";
 
@@ -17,14 +18,17 @@ const Results = () => {
   }, [id]);
 
   return (
-    <div className="wrapper">
-      <ResultsStyled>
-        <div className="container">
+    <ResultsStyled>
+      <Nav />
+      <main className="wrapper">
+        <div className="title">
           <h2>Results</h2>
-          <div className="score">
-            <p>Score: {results?.percent}%</p>
-          </div>
+        </div>
+        <div className="container results-container">
           <div className="results">
+            <div className="score">
+              <p>Score: {results?.percent}%</p>
+            </div>
             <div className="row">
               <p>Test:</p>
               <p>{results?.testName}</p>
@@ -43,8 +47,10 @@ const Results = () => {
             </div>
           </div>
         </div>
-        <div className="container">
+        <div className="title">
           <h2>Review</h2>
+        </div>
+        <div className="container review-container">
           <div className="review">
             {results.qaMap && (
               <ResultsTable
@@ -54,8 +60,8 @@ const Results = () => {
             )}
           </div>
         </div>
-      </ResultsStyled>
-    </div>
+      </main>
+    </ResultsStyled>
   );
 };
 
