@@ -1,4 +1,4 @@
-# quiztime
+# coderbyte test
 
 A functioning test taking website. This project is a monorepo composed of two packages, an API built with Express, and a frontend Client built with React.
 
