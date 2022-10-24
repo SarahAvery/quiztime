@@ -6,18 +6,19 @@ const ResultsItemRowStyled = styled.li`
   margin: 10px;
   border-radius: 6px;
   border: 1px solid grey;
-  /* box-shadow: var(--box-shadow-thin) white; */
   display: block;
-  width: calc(50% - 20px);
+  width: calc(100% - 20px);
   background: white;
+  box-shadow: var(--box-shadow-thin) #808080;
 
   .status {
     width: 100%;
     text-align: center;
-    padding: 15px;
+    /* padding: 15px; */
     font-weight: bold;
     position: relative;
     ${flexCenter};
+    height: 50px;
   }
 
   .mark {
@@ -42,13 +43,16 @@ const ResultsItemRowStyled = styled.li`
     fill: #008000;
   }
 
+  .result-box {
+  }
+
   .question,
   .answers {
     padding: 10px 20px;
   }
 
   .answers {
-    align-self: center;
+    align-self: auto;
   }
 
   .question {
@@ -142,6 +146,25 @@ const ResultsItemRowStyled = styled.li`
   }
   span.value {
     padding: 5px;
+  }
+
+  @media (min-width: 680px) {
+    width: calc(50% - 20px);
+    max-width: 420px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 100%;
+
+    .result-box {
+      display: flex;
+      padding: 20px 0;
+    }
+
+    .question,
+    .answers {
+      width: 50%;
+    }
   }
 `;
 

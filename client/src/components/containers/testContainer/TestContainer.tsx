@@ -9,7 +9,10 @@ import Steps from "../../ui/steps/Steps";
 const TestContainer = () => {
   const { testId } = useParams();
   /** We cast this to TestType since we return a 404 on `/test/non-exisitent-test-id` */
-  const currentTestConfig = useMemo(() => testConfig.find(({ id }) => id === testId), [testId]) as TestType;
+  const currentTestConfig = useMemo(
+    () => testConfig.find(({ id }) => id === testId),
+    [testId]
+  ) as TestType;
 
   const [formData, setFormData] = useState<Record<string, string>>({});
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
@@ -62,6 +65,7 @@ const TestContainer = () => {
         <p>Test: {currentTestConfig.name}</p>
       </div>
       <div className="centered">
+        <Steps total={numberOfQuestions} currIndex={currentQuestionIndex + 1} />
         <form>
           <Question
             key={currentQuestion.id}
@@ -77,15 +81,18 @@ const TestContainer = () => {
                 Next
               </button>
             )}
-            {currentQuestionIndex === currentTestConfig?.questions.length - 1 && (
+            {currentQuestionIndex ===
+              currentTestConfig?.questions.length - 1 && (
               <button onClick={onSubmit} disabled={nextDisabled}>
                 Submit
               </button>
             )}
-            {currentQuestionIndex >= 1 && <button onClick={onBack}>Back</button>}
+            {currentQuestionIndex >= 1 && (
+              <button onClick={onBack}>Back</button>
+            )}
           </div>
         </form>
-        <Steps total={numberOfQuestions} currIndex={currentQuestionIndex + 1} />
+        {/* <Steps total={numberOfQuestions} currIndex={currentQuestionIndex + 1} /> */}
       </div>
     </FormStyled>
   );

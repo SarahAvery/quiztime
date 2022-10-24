@@ -29,21 +29,23 @@ const Results = () => {
             <div className="score">
               <p>Score: {results?.percent}%</p>
             </div>
-            <div className="row">
-              <p>Test:</p>
-              <p>{results?.testName}</p>
-            </div>
-            <div className="row">
-              <p>Score:</p>
-              <p>{results?.percent}%</p>
-            </div>
-            <div className="row">
-              <p>Passing Percent:</p>
-              <p>70%</p>
-            </div>
-            <div className="row">
-              <p>Status:</p>
-              <p>{results?.percent > 70 ? "Passed" : "Failed"}</p>
+            <div className="row-container">
+              <div className="row">
+                <p>Test:</p>
+                <p>{results?.testName}</p>
+              </div>
+              <div className="row">
+                <p>Score:</p>
+                <p>{results?.percent}%</p>
+              </div>
+              <div className="row">
+                <p>Passing Percent:</p>
+                <p>70%</p>
+              </div>
+              <div className="row">
+                <p>Status:</p>
+                <p>{results?.percent > 70 ? "Passed" : "Failed"}</p>
+              </div>
             </div>
           </div>
         </div>

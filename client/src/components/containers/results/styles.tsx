@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexCenter } from "../../mixins";
+import { flexCenter, flexCenterWrap } from "../../mixins";
 
 const ResultsStyled = styled.div`
   min-height: calc(100vh - 80px);
@@ -39,7 +39,7 @@ const ResultsStyled = styled.div`
     margin: 20px 0;
     letter-spacing: 0.7px;
     font-size: 30px;
-    color: #ffffff;
+    color: #000;
   }
 
   .score {
@@ -47,7 +47,7 @@ const ResultsStyled = styled.div`
     font-size: 40px;
     text-align: center;
     ${flexCenter};
-    margin: 30px;
+    margin-bottom: 30px;
 
     p {
       padding: 30px;
@@ -57,9 +57,19 @@ const ResultsStyled = styled.div`
     }
   }
 
+  .row-container {
+    width: 300px;
+    border: 1px solid grey;
+    border-radius: 6px;
+    box-shadow: var(--box-shadow-thin) #808080;
+    ${flexCenterWrap};
+    justify-content: start;
+  }
+
   .row {
     display: flex;
     padding: 20px 10px;
+    width: 100%;
     p {
       font-size: 18px;
     }
@@ -69,6 +79,17 @@ const ResultsStyled = styled.div`
   }
   .row p:last-child {
     padding-left: 5px;
+  }
+
+  @media (min-width: 620px) {
+    .row-container {
+      width: 100%;
+      ${flexCenterWrap};
+    }
+
+    .row {
+      width: auto;
+    }
   }
 `;
 

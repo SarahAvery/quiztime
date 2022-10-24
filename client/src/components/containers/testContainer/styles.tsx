@@ -1,14 +1,16 @@
 import styled from "styled-components";
-import { flexCenterWrap } from "../../mixins";
+// import { flexCenterWrap } from "../../mixins";
 
 const FormStyled = styled.div`
   min-height: calc(100vh);
   color: #000000;
+  background-color: var(--grey);
 
   .test-title {
     background-color: #ffffff;
     height: 70px;
     font-size: 30px;
+    border-bottom: 1px solid black;
 
     p {
       width: 100%;
@@ -22,7 +24,7 @@ const FormStyled = styled.div`
   .centered {
     margin: 40px 10%;
     min-height: calc(100vh - 70px - 80px);
-    ${flexCenterWrap};
+    display: block;
   }
 
   form {

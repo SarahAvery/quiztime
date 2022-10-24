@@ -7,18 +7,20 @@ const Home = () => {
   return (
     <HomeStyled>
       <Nav />
-      <main className="wrapper">
-        <div className="title">
-          <h1>Think you know your facts? Put it to the test!</h1>
+      <div className="banner">
+        <div className="banner-container">
+          <div className="banner-img"></div>
         </div>
+      </div>
+      <main className="wrapper">
         <div className="container">
           <div className="paragraph">
             <h2>Get Started:</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quidem
               aliquam consectetur explicabo sed odio eaque amet recusandae rem
-              tenetur earum, laudantium, deserunt cupiditate dicta ea aspernatur
-              deleniti dolores excepturi.
+              tenetur earum, laudantium, 🔥 deserunt cupiditate dicta ea
+              aspernatur deleniti dolores excepturi.
             </p>
           </div>
           <div className="test-button-container">

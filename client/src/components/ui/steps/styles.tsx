@@ -7,22 +7,23 @@ const StepsStyled = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+  margin-bottom: 30px;
 
-  .line {
+  /* .line {
     width: 100%;
     height: 2px;
     background-color: #ffffff;
-  }
+  } */
 
-  .circles {
+  /* .circles {
     width: 100%;
     z-index: 1;
     position: absolute;
     display: flex;
     justify-content: space-between;
-  }
+  } */
 
-  .circle {
+  /* .circle {
     width: 35px;
     height: 35px;
     border-radius: 35px;
@@ -32,13 +33,32 @@ const StepsStyled = styled.div`
     box-shadow: var(--box-shadow-thin) var(--blue);
     color: #ffffff;
     background-color: var(--blue);
-  }
+  } */
 
-  .circle.current {
+  /* .circle.current {
     border: 2px solid #000000;
     color: #000000;
     background-color: #ffffff;
+  } */
+
+  .bar {
+    border: 1px solid black;
+    height: 16px;
+    width: 100%;
+    border-radius: 10px;
   }
 `;
 
-export default StepsStyled;
+interface Percent {
+  percent: number;
+}
+
+const PercentStyled = styled.div<Percent>`
+  width: ${(props) => props.percent}%;
+  background-color: #242e62;
+  height: 100%;
+  border-radius: 10px;
+  transition: all 0.5s ease-in;
+`;
+
+export { StepsStyled, PercentStyled };

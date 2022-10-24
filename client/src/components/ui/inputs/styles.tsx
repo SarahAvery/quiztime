@@ -3,14 +3,16 @@ import styled from "styled-components";
 const InputContainerStyled = styled.div`
   border: 1px solid #d3d3d3;
   border-radius: 6px;
-  margin-bottom: 10px;
-  border-radius: 6px;
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &.checked {
     background: #406788cc;
 
     label {
-      /* color: #000000; */
       color: #ffffff;
     }
   }
