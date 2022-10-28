@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import NavStyled from "./styles";
 
-const Nav = () => {
+const Nav = ({ title, link = "/" }: { title: string; link: string }) => {
   return (
     <NavStyled>
       <div className="wrapper">
-        <Link to={"/"}>QuizTime!</Link>
+        <Link to={link}>{title}</Link>
       </div>
     </NavStyled>
   );

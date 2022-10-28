@@ -48,7 +48,7 @@ const evaluate = (data) => {
 
 router.get("/:id", function (req, res, next) {
   const id = req.params.id;
-  console.log(req.params);
+  // console.log(req.params);
   if (id && db[id]) {
     res.json(db[id]).status(200);
   }
@@ -58,7 +58,7 @@ router.get("/:id", function (req, res, next) {
 router.post("/", function (req, res, next) {
   const id = uuidv4();
 
-  console.log("body: ", req.body);
+  // console.log("body: ", req.body);
   const result = evaluate(req.body);
   if (id) {
     db[id] = { ...req.body, ...result };

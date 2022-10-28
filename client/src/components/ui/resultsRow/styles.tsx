@@ -3,13 +3,17 @@ import { flexCenter } from "../../mixins";
 
 const ResultsItemRowStyled = styled.li`
   list-style: none;
-  margin: 10px;
+  margin: 20px 10px;
   border-radius: 6px;
   border: 1px solid grey;
   display: block;
   width: calc(100% - 20px);
   background: white;
   box-shadow: var(--box-shadow-thin) #808080;
+
+  &:first-child {
+    margin-top: 0px;
+  }
 
   .status {
     width: 100%;
@@ -151,6 +155,12 @@ const ResultsItemRowStyled = styled.li`
   @media (min-width: 680px) {
     width: calc(50% - 20px);
     max-width: 420px;
+    margin: 10px;
+
+    &:first-child,
+    &:nth-child(2) {
+      margin-top: 0px;
+    }
   }
 
   @media (min-width: 1200px) {

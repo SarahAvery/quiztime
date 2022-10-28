@@ -10,7 +10,8 @@ const InputContainerStyled = styled.div`
   }
 
   &.checked {
-    background: #406788cc;
+    background: var(--light-blue);
+    border: 1px solid #5b5b5b;
 
     label {
       color: #ffffff;
@@ -66,7 +67,7 @@ const InputContainerStyled = styled.div`
       }
       &:checked + span:before {
         border: 1px solid #ffffff;
-        background: #406788cc;
+        background: var(--dark-orange);
       }
     }
   }

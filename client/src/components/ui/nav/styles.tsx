@@ -10,8 +10,9 @@ const NavStyled = styled.div`
   a {
     margin: 30px 0;
     text-decoration: none;
-    color: #000;
+    color: var(--blue);
     font-size: 30px;
+    font-weight: bold;
   }
 
   @media (max-width: 620px) {

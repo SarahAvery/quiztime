@@ -165,12 +165,22 @@ select {
 /* Application */
 
 :root {
-  --buttonBlue: #242E63;
+  --purple: #896EF5;
+  --dark-purple: #6547db;
+  --orange: #F5BF6E;
+  --dark-orange: #eb9f2d;
+  --blue: #242E63;
+  --light-blue: #406788;
+  --green: #DAF56E;
+  --pink: #F56EDA;
   --grey: #fafafa;
+  
+
+  --medium-blue: #35424d;
+
+
   --greenBlue: #378B8C;
   --green: #659999;
-  --lightGreen: #cdd9c6;
-  --blue: #252D42;
   --primary-color: #2b3d4f;
   --primary-hover-color: #1e3043;
   --color-tertiary: #1cc4ca;
@@ -178,11 +188,11 @@ select {
   --color-quaternary: #1ab7bc;
   --color-quaternary-hover-color: #1ab7bc;
   --dark-grey-blue: #5d6b79;
-  --medium-blue: #35424d;
   --deep-blue: #192e3e;
-  --secondary-blue: #406788;
+
   --box-shadow-thin: 1px 1px 4px 0px;
   --box-shadow-blurry: 1px 4px 24px 1px;
+  --box-shadow-blurry-2: 2px 4px 20px 0px;
 }
 
 
@@ -249,3 +259,42 @@ body {
   nav.wrapper {
      min-height: 0;
    }
+
+
+.button-container {
+  width: 100%;
+  border-top: 1px solid #d3d3d3;
+  text-align: right;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  height: 60px;
+}
+
+button {
+  padding: 8px 25px;
+  color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  box-shadow: none;
+  overflow: visible;
+  border-width: 0;
+  border-radius: 6px;
+  border: 1px solid #808080;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  background: var(--blue);
+  box-shadow: var(--box-shadow-thin) var(--light-blue);
+
+}
+button:hover {
+  background: var(--light-blue);
+}
+
+button:disabled, button.back-btn:disabled, button.next-btn:disabled {
+  background-color: #afafaf;
+  opacity: 0.8;
+  box-shadow: var(--box-shadow-thin) #808080;
+  border: 1px solid #808080;
+}

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { flexCenter } from "../../mixins";
 
 const StepsStyled = styled.div`
   width: 100%;
@@ -9,43 +8,12 @@ const StepsStyled = styled.div`
   position: relative;
   margin-bottom: 30px;
 
-  /* .line {
-    width: 100%;
-    height: 2px;
-    background-color: #ffffff;
-  } */
-
-  /* .circles {
-    width: 100%;
-    z-index: 1;
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-  } */
-
-  /* .circle {
-    width: 35px;
-    height: 35px;
-    border-radius: 35px;
-    border: 2px solid #ffffff;
-    ${flexCenter};
-    z-index: 1;
-    box-shadow: var(--box-shadow-thin) var(--blue);
-    color: #ffffff;
-    background-color: var(--blue);
-  } */
-
-  /* .circle.current {
-    border: 2px solid #000000;
-    color: #000000;
-    background-color: #ffffff;
-  } */
-
   .bar {
     border: 1px solid black;
     height: 16px;
     width: 100%;
     border-radius: 10px;
+    box-shadow: var(--box-shadow-thin) rgba(64, 104, 136, 0.6);
   }
 `;
 
@@ -55,7 +23,7 @@ interface Percent {
 
 const PercentStyled = styled.div<Percent>`
   width: ${(props) => props.percent}%;
-  background-color: #242e62;
+  background-color: var(--blue);
   height: 100%;
   border-radius: 10px;
   transition: all 0.5s ease-in;

@@ -1,30 +1,27 @@
 import styled from "styled-components";
-// import { flexCenterWrap } from "../../mixins";
 
 const FormStyled = styled.div`
   min-height: calc(100vh);
   color: #000000;
-  background-color: var(--grey);
 
-  .test-title {
-    background-color: #ffffff;
-    height: 70px;
-    font-size: 30px;
-    border-bottom: 1px solid black;
+  .wrapper {
+    background: white;
 
-    p {
-      width: 100%;
-      padding: 20px 10%;
-      text-transform: capitalize;
-      font-weight: bold;
-      font-size: 24px;
+    a {
+      cursor: default;
     }
   }
 
   .centered {
-    margin: 40px 10%;
-    min-height: calc(100vh - 70px - 80px);
+    padding: 40px 10%;
+    min-height: calc(100vh - 97px);
     display: block;
+    background-color: var(--grey);
+
+    .wrapper {
+      background-color: var(--grey);
+      max-width: 900px;
+    }
   }
 
   form {
@@ -35,43 +32,26 @@ const FormStyled = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: column;
-    box-shadow: var(--box-shadow-blurry) var(--secondary-blue);
+    box-shadow: var(--box-shadow-blurry-2) var(--medium-blue);
   }
 
-  .button-container {
-    width: 100%;
-    border-top: 1px solid #d3d3d3;
-    text-align: right;
-    padding: 10px 30px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    height: 60px;
-  }
-
-  button {
-    padding: 8px 25px;
-    background: var(--primary-color);
-    color: #ffffff;
-    outline: none;
-    box-shadow: none;
-    overflow: visible;
-    border-width: 0;
-    border-radius: 6px;
-    border: 1px solid #808080;
-    font-weight: bold;
-    transition: all 0.2s ease-in-out;
-    box-shadow: var(--box-shadow-thin) var(--secondary-blue);
+  .back-btn {
+    background: var(--blue);
+    box-shadow: var(--box-shadow-thin) var(--light-blue);
 
     &:hover {
-      background: var(--secondary-blue);
+      background: var(--light-blue);
     }
   }
 
-  button:disabled {
-    background-color: #afafaf;
-    opacity: 0.8;
-    box-shadow: var(--box-shadow-thin) #808080;
+  .next-btn {
+    background: var(--dark-orange);
+    box-shadow: var(--box-shadow-thin) var(--orange);
+    border: 1px solid var(--dark-orange);
+
+    &:hover {
+      background: var(--orange);
+    }
   }
 
   .wrapper {

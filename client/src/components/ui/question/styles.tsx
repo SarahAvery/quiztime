@@ -29,7 +29,7 @@ const QuestionStyled = styled.div`
 
       &::before {
         content: "";
-        border-left: 4px solid #d3d3d3;
+        border-left: 4px solid var(--blue);
         margin-right: 10px;
       }
     }
