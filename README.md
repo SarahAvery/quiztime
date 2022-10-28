@@ -25,10 +25,10 @@ A functioning test taking website. This project is a monorepo composed of two pa
 
 ## Screenshots
 
+### home
+
+![quiz image](quiztime1.jpg)
+
 ### quiz
 
-![quiz image](quiztime1.png)
-
-### results page
-
-![results image](quiztime2.png)
+![results image](quiztime2.jpg)
