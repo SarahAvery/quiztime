@@ -2,9 +2,7 @@ import styled from "styled-components";
 
 const QuestionStyled = styled.div`
   width: 100%;
-  display: flex;
-  align-items: center;
-  padding: 20px 0;
+  display: block;
 
   .instructions {
     text-transform: uppercase;
@@ -15,30 +13,39 @@ const QuestionStyled = styled.div`
   }
 
   .question-title,
-  .instructions {
+  .instructions,
+  .question-content {
     margin-bottom: 20px;
   }
 
   .question,
   .answer-container {
-    padding: 30px;
-  }
-
-  .answer-container {
-    flex-grow: 1;
+    margin: 30px;
   }
 
   .question {
-    width: 50%;
-
     .question-content {
       display: flex;
 
       &::before {
         content: "";
-        border-left: 4px solid #d3d3d3;
+        border-left: 4px solid var(--blue);
         margin-right: 10px;
       }
+    }
+  }
+
+  @media (min-width: 800px) {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+
+    .answer-container {
+      flex-grow: 1;
+    }
+
+    .question {
+      width: 50%;
     }
   }
 `;

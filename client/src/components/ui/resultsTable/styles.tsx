@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
 const ResultsTableStyled = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: -10px;
+  display: block;
+
+  @media (min-width: 680px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 export default ResultsTableStyled;

@@ -3,14 +3,17 @@ import styled from "styled-components";
 const InputContainerStyled = styled.div`
   border: 1px solid #d3d3d3;
   border-radius: 6px;
-  margin-bottom: 10px;
-  border-radius: 6px;
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &.checked {
-    background: #406788cc;
+    background: var(--light-blue);
+    border: 1px solid #5b5b5b;
 
     label {
-      /* color: #000000; */
       color: #ffffff;
     }
   }
@@ -64,7 +67,7 @@ const InputContainerStyled = styled.div`
       }
       &:checked + span:before {
         border: 1px solid #ffffff;
-        background: #406788cc;
+        background: var(--dark-orange);
       }
     }
   }

@@ -50,38 +50,41 @@ const ResultItemRow = ({
         <p>{data.isCorrect ? "Correct" : "Incorrect"}</p>
         <p className="mark">{data.isCorrect ? checkmark : xmark}</p>
       </div>
-      <div className="question">
-        <span>#{questionNumber}: </span>
-        {question?.title}
+
+      <div className="result-box">
+        <div className="question">
+          <span>#{questionNumber}: </span>
+          {question?.title}
+        </div>
+
+        {data.isCorrect && (
+          <div className="answers">
+            <div className="correct input-container">
+              <div className="radio">
+                <span className="circle"></span>
+                <span className="value">{correctAnswer?.value}</span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {!data.isCorrect && (
+          <div className="answers">
+            <div className="incorrect input-container">
+              <div className="radio">
+                <span className="circle"></span>
+                <span className="value">{userAnswer?.value}</span>
+              </div>
+            </div>
+            <div className="correct input-container">
+              <div className="radio">
+                <span className="circle"></span>
+                <span className="value">{correctAnswer?.value}</span>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
-
-      {data.isCorrect && (
-        <div className="answers">
-          <div className="correct input-container">
-            <div className="radio">
-              <span className="circle"></span>
-              <span className="value">{correctAnswer?.value}</span>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {!data.isCorrect && (
-        <div className="answers">
-          <div className="incorrect input-container">
-            <div className="radio">
-              <span className="circle"></span>
-              <span className="value">{userAnswer?.value}</span>
-            </div>
-          </div>
-          <div className="correct input-container">
-            <div className="radio">
-              <span className="circle"></span>
-              <span className="value">{correctAnswer?.value}</span>
-            </div>
-          </div>
-        </div>
-      )}
     </ResultsItemRowStyled>
   );
 };

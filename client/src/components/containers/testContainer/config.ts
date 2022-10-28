@@ -259,4 +259,131 @@ export const testConfig: TestType[] = [
       },
     ],
   },
+  {
+    id: "test-three",
+    name: "Third",
+    questions: [
+      {
+        id: "q1",
+        title:
+          "The sandwich known as the 'Reuben' does not have which of the following ingredients?",
+        answers: [
+          { id: "q1-1", value: "Boiled ham" },
+          { id: "q1-2", value: "Corned beef" },
+          { id: "q1-3", value: "Sauerkraut" },
+          { id: "q1-4", value: "Swiss cheese" },
+        ],
+      },
+      {
+        id: "q2",
+        title: "What country produces the most potatoes",
+        content:
+          "____ produces close to 92 million metric tons of potatoes every year.",
+        answers: [
+          { id: "q2-1", value: "China" },
+          { id: "q2-2", value: "United States" },
+          { id: "q2-3", value: "Ireland" },
+          { id: "q2-4", value: "Russia" },
+        ],
+      },
+      {
+        id: "q3",
+        title: "Which of these has the highest percentage of water?",
+        answers: [
+          { id: "q3-1", value: "Celery" },
+          { id: "q3-2", value: "Lettuce" },
+          { id: "q3-3", value: "Cucumber" },
+          { id: "q3-4", value: "Squash" },
+        ],
+      },
+      {
+        id: "q4",
+        title:
+          "Which fruit is known for being so pungent, it is actually banned on public transport in some countries?",
+        answers: [
+          { id: "q4-1", value: "Star Fruit" },
+          { id: "q4-2", value: "Durian" },
+          { id: "q4-3", value: "Papaya" },
+          { id: "q4-4", value: "Jackfruit" },
+        ],
+      },
+      {
+        id: "q5",
+        title: "Which country does Gouda cheese come from?",
+        answers: [
+          { id: "q5-1", value: "England" },
+          { id: "q5-2", value: "The Netherlands" },
+          { id: "q5-3", value: "Italy" },
+          { id: "q5-4", value: "France" },
+        ],
+      },
+      {
+        id: "q6",
+        title:
+          "Pizza is one the most popular foods in the world, and can be found almost everywhere. From which Italian city does modern pizza originate?",
+        content:
+          "The word pizza was first documented in 997 ACE in Gaeta and successively in different parts of Central and Southern Italy. Pizza was mainly eaten in Italy and by emigrants from there.",
+        answers: [
+          {
+            id: "q6-1",
+            value: "Florence",
+          },
+          {
+            id: "q6-2",
+            value: "Rome",
+          },
+          {
+            id: "q6-3",
+            value: "Naples",
+          },
+          {
+            id: "q6-4",
+            value: "Genoa",
+          },
+        ],
+      },
+      {
+        id: "q7",
+        title: "Which one of these French dishes was not a peasant dish?",
+        answers: [
+          { id: "q7-1", value: "Boeuf Bourguignon" },
+          { id: "q7-2", value: "Pot-au-Feu" },
+          { id: "q7-3", value: "Ratatouille" },
+          { id: "q7-4", value: "Hare à la royale" },
+        ],
+      },
+      {
+        id: "q8",
+        title: "Which one of these puddings is not sweet?",
+        content:
+          "The recipe for _____ pudding can be dated as far back as 1747 in the book 'The Art of Cookery Made Plain and Easy' by Hannah Glasse.",
+        answers: [
+          { id: "q8-1", value: "Yorkshire Pudding" },
+          { id: "q8-2", value: "Sticky Toffee Pudding" },
+          { id: "q8-3", value: "Christmas pudding" },
+          { id: "q8-4", value: "Bread and butter pudding" },
+        ],
+      },
+      {
+        id: "q9",
+        title: "Which one of these dishes does not contain rice?",
+        answers: [
+          { id: "q9-1", value: "Arancini" },
+          { id: "q9-2", value: "Paella" },
+          { id: "q9-3", value: "Dolmades" },
+          { id: "q9-4", value: "Cassoulet" },
+        ],
+      },
+      {
+        id: "q10",
+        title: "What is the main ingredient in Falafels?",
+        answers: [
+          { id: "q10-1", value: "Aubergine" },
+          { id: "q10-2", value: "Potato" },
+          { id: "q10-3", value: "Carrot" },
+          { id: "q10-4", value: "Chickpea" },
+        ],
+      },
+    ],
+  },
 ];

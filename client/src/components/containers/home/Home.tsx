@@ -1,24 +1,40 @@
 import HomeStyled from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { testConfig } from "../testContainer/config";
 import Nav from "../../ui/nav/Nav";
+import { useState } from "react";
 
 const Home = () => {
+  const [testResultId, setTestResultId] = useState<string>("");
+
+  const navigate = useNavigate();
+
+  const onChange = (e: string) => {
+    setTestResultId(e);
+  };
+
+  const onSubmit: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+    e.preventDefault();
+    navigate(`/results/${testResultId}`);
+  };
+
   return (
     <HomeStyled>
-      <Nav />
-      <main className="wrapper">
-        <div className="title">
-          <h1>Think you know your facts? Put it to the test!</h1>
+      <Nav title="QuizTime!" link="/" />
+      <div className="banner">
+        <div className="banner-container">
+          <div className="banner-img"></div>
         </div>
+      </div>
+      <main className="wrapper">
         <div className="container">
           <div className="paragraph">
             <h2>Get Started:</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quidem
               aliquam consectetur explicabo sed odio eaque amet recusandae rem
-              tenetur earum, laudantium, deserunt cupiditate dicta ea aspernatur
-              deleniti dolores excepturi.
+              tenetur earum, laudantium, 🔥 deserunt cupiditate dicta ea
+              aspernatur deleniti dolores excepturi.
             </p>
           </div>
           <div className="test-button-container">
@@ -36,11 +52,23 @@ const Home = () => {
           <div className="paragraph">
             <h2>Results:</h2>
             <p>
-              Nemo corrupti sint nam ad perspiciatis voluptatem aliquid magni
-              omnis ut architecto, blanditiis quos. Mollitia repellendus quo
-              natus placeat ipsum blanditiis saepe itaque inventore, quod,
-              voluptas quidem accusantium vitae facilis!
+              Already completed a test? Enter your unique result id here to see
+              your results!
             </p>
+            <div className="resultlink-container">
+              <div className="submit-container">
+                <label htmlFor="testId">Result Id:</label>
+                <input
+                  type="text"
+                  name="testId"
+                  onChange={(e) => onChange(e.target.value)}
+                  autoComplete="off"
+                />
+              </div>
+              <div className="button-container">
+                <button onClick={onSubmit}>Submit</button>
+              </div>
+            </div>
           </div>
         </div>
       </main>

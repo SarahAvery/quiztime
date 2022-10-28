@@ -1,17 +1,15 @@
-import StepsStyled from "./styles";
+import { PercentStyled, StepsStyled } from "./styles";
 
 const Steps = ({ total, currIndex }: { total: number; currIndex: number }) => {
   const arr = Array.from(Array(total).keys());
 
+  const percent: number = currIndex * arr.length;
+  // const test = currIndex * arr.length;
+
   return (
     <StepsStyled>
-      <div className="line"></div>
-      <div className="circles">
-        {arr.map((i) => (
-          <div className={currIndex === i + 1 ? "circle current" : "circle"} key={i}>
-            <span className="label">{i + 1}</span>
-          </div>
-        ))}
+      <div className="bar">
+        <PercentStyled percent={percent}></PercentStyled>
       </div>
     </StepsStyled>
   );
