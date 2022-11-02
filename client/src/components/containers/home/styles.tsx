@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { flexCenterWrap } from "../../mixins";
+import webBanner from "../../../img/webbannersvg.svg";
+import mobileBanner from "../../../img/mobilesvg.svg";
 
 const HomeStyled = styled.div`
   width: 100%;
@@ -38,7 +40,7 @@ const HomeStyled = styled.div`
   }
 
   .banner-img {
-    background-image: url("./img/mobilesvg.svg");
+    background-image: url(${mobileBanner});
     background-repeat: no-repeat;
     background-position: center;
     height: 430px;
@@ -204,7 +206,8 @@ const HomeStyled = styled.div`
       width: 100%;
     }
     .banner-img {
-      background-image: url("./img/webbannersvg.svg");
+      /* background-image: url("./img/webbannersvg.svg"); */
+      background-image: url(${webBanner});
       height: 300px;
       width: 800px;
     }

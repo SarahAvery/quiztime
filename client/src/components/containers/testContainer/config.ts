@@ -261,7 +261,7 @@ export const testConfig: TestType[] = [
   },
   {
     id: "test-three",
-    name: "Third",
+    name: "More Food",
     questions: [
       {
         id: "q1",

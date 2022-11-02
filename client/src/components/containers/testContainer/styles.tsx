@@ -54,6 +54,11 @@ const FormStyled = styled.div`
     }
   }
 
+  .next-btn:disabled {
+    &:hover {
+      background-color: #afafaf;
+    }
+  }
   .wrapper {
     min-height: auto;
   }

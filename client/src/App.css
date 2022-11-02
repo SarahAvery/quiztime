@@ -286,6 +286,7 @@ button {
   transition: all 0.2s ease-in-out;
   background: var(--blue);
   box-shadow: var(--box-shadow-thin) var(--light-blue);
+  cursor: pointer;
 
 }
 button:hover {
@@ -297,4 +298,5 @@ button:disabled, button.back-btn:disabled, button.next-btn:disabled {
   opacity: 0.8;
   box-shadow: var(--box-shadow-thin) #808080;
   border: 1px solid #808080;
+  cursor: initial;
 }

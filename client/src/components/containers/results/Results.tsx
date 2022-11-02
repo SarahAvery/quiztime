@@ -10,8 +10,13 @@ import ResultsStyled from "./styles";
 const Results = () => {
   const { id } = useParams();
   const [results, setResults] = useState<Record<string, any>>({});
+  const [waitResponse, setWaitResponse] = useState(false);
 
-  console.log(!results.testId);
+  useEffect(() => {
+    setInterval(() => {
+      setWaitResponse(true);
+    }, 1200);
+  }, []);
 
   const percent = results?.percent;
 
@@ -33,7 +38,7 @@ const Results = () => {
   return (
     <ResultsStyled>
       <Nav title="QuizTime!" link="/" />
-      {!results.testId && <NotFound />}
+      {waitResponse && !results.testId && <NotFound />}
       {results.testId && (
         <main className="wrapper">
           <div className="results-id">
